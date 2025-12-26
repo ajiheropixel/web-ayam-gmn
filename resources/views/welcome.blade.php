@@ -57,15 +57,13 @@
             @endphp
 
             @forelse($products as $item)
-            <div class="bg-white p-6 rounded-[40px] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                
-                <div class="aspect-square bg-orange-50 rounded-[30px] mb-6 flex items-center justify-center text-7xl group-hover:bg-orange-100 transition-colors overflow-hidden">
-                    @if($item->image)
-                        <img src="{{ asset('storage/'.$item->image) }}" class="w-full h-full object-cover">
-                    @else
-                        🍗
-                    @endif
-                </div>
+           <div class="aspect-square bg-orange-50 rounded-[30px] mb-6 flex items-center justify-center text-7xl overflow-hidden">
+    @if($item->image)
+        <img src="{{ asset('images/'.$item->image) }}" class="w-full h-full object-cover">
+    @else
+        🍗
+    @endif
+</div>
 
                 <div class="space-y-1">
                     <h3 class="font-extrabold text-2xl text-slate-800 group-hover:text-orange-600 transition-colors">

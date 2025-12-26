@@ -6,7 +6,9 @@
                 
                 <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                     @csrf
-                    @method('PUT') <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    @method('PUT') 
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-slate-700">Nama Produk</label>
                             <input type="text" name="name" value="{{ $product->name }}" class="mt-1 block w-full border-slate-200 rounded-2xl shadow-sm focus:ring-orange-500 focus:border-orange-500 py-3" required>
@@ -20,6 +22,19 @@
                     <div>
                         <label class="block text-sm font-semibold text-slate-700">Stok (Ekor)</label>
                         <input type="number" name="stock" value="{{ $product->stock }}" class="mt-1 block w-full border-slate-200 rounded-2xl shadow-sm focus:ring-orange-500 focus:border-orange-500 py-3" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Ganti Foto Ayam (Kosongkan jika tidak diganti)</label>
+                        
+                        @if($product->image)
+                            <div class="mb-3">
+                                <p class="text-xs text-slate-400 mb-1">Foto saat ini:</p>
+                                <img src="{{ asset('images/' . $product->image) }}" class="w-32 h-32 object-cover rounded-2xl border">
+                            </div>
+                        @endif
+                        
+                        <input type="file" name="image" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
                     </div>
 
                     <div class="flex justify-between items-center pt-4">
