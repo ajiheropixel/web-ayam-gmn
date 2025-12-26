@@ -4,68 +4,41 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        // Mengambil semua data produk dari database
-        $products = \App\Models\Product::latest()->get();
-        // Mengirim data ke folder resources/views/admin/products/index.blade.php
+        // Mengambil data dan mengirim ke view
+        $products = Product::latest()->get();
         return view('admin.products.index', compact('products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('admin.products.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('products', 'public');
-            $validatedData['image'] = $path;
-        }
-    }
+        // Validasi agar tidak ada data kosong yang masuk ke database
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
+        // Simpan data ke database
+        Product::create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'description' => 'Ayam segar berkualitas.',
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'image' => null, // Kita set null dulu agar tidak error gambar
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        //
+        return redirect()->route('products.index')->with('success', 'Data Berhasil Disimpan!');
     }
 }
