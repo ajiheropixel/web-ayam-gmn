@@ -4,7 +4,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-3xl p-10">
                 <h2 class="text-2xl font-extrabold text-slate-800 mb-6">Tambah Stok Ayam Baru</h2>
                 
-                <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
+                <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>

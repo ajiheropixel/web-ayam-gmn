@@ -12,8 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // Mengambil semua data produk dari yang terbaru
-        $products = Product::latest()->get();
+        // Mengambil semua data produk dari database
+        $products = \App\Models\Product::latest()->get();
+        // Mengirim data ke folder resources/views/admin/products/index.blade.php
         return view('admin.products.index', compact('products'));
     }
 
@@ -30,7 +31,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('products', 'public');
+            $validatedData['image'] = $path;
+        }
     }
 
     /**
