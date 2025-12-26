@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Letakkan di dalam group middleware auth agar aman
     Route::resource('products', ProductController::class);
+    Route::resource('promos', PromoController::class);
 });
 
 require __DIR__ . '/auth.php';

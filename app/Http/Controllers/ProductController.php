@@ -39,6 +39,30 @@ class ProductController extends Controller
             'image' => null, // Kita set null dulu agar tidak error gambar
         ]);
 
+
         return redirect()->route('products.index')->with('success', 'Data Berhasil Disimpan!');
+    }
+    public function edit(Product $product)
+    {
+        return view('admin.products.edit', compact('product'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer',
+        ]);
+
+        $product->update($request->all());
+
+        return redirect()->route('products.index')->with('success', 'Produk berhasil diperbarui!');
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus!');
     }
 }
