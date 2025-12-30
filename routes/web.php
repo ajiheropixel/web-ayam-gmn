@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,9 @@ Route::middleware('auth')->group(function () {
     // Letakkan di dalam group middleware auth agar aman
     Route::resource('products', ProductController::class);
     Route::resource('promos', PromoController::class);
+    Route::get('/admin/settings', [SettingController::class, 'index'])->name('admin.settings.index');
+    Route::post('/admin/settings', [SettingController::class, 'update'])->name('admin.settings.update');
 });
+
 
 require __DIR__ . '/auth.php';
