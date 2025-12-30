@@ -28,6 +28,9 @@
                     <a href="{{ route('products.create') }}" class="bg-orange-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-orange-600 transition">
                         + Tambah Stok Ayam
                     </a>
+                    <a href="{{ route('admin.settings.index') }}" class="bg-slate-800 text-white px-6 py-3 rounded-2xl font-bold hover:bg-slate-700 transition">
+                        ⚙️ Edit Tampilan Web
+                    </a>
                     <a href="/" target="_blank" class="bg-slate-800 text-white px-6 py-3 rounded-2xl font-bold hover:bg-slate-900 transition">
                         Lihat Web Utama
                     </a>

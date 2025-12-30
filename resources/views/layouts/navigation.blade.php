@@ -19,7 +19,12 @@
                  <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.*')">
                    {{ __('Manajemen Produk') }}
                   </x-nav-link>
-                </div>
+
+                  <x-nav-link :href="route('admin.settings.index')" :active="request()->routeIs('admin.settings.index')">
+                    {{ __('Pengaturan Web') }}
+                </x-nav-link>
+                
+                
             </div>
 
             <!-- Settings Dropdown -->

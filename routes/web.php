@@ -36,5 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/settings', [SettingController::class, 'update'])->name('admin.settings.update');
 });
 
-
 require __DIR__ . '/auth.php';
