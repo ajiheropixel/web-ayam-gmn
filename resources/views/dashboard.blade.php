@@ -10,7 +10,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-orange-100">
                     <p class="text-sm text-gray-500 font-medium">Total Produk Ayam</p>
-                    <h3 class="text-3xl font-bold text-orange-600">12 Item</h3>
+                    <h3 class="text-3xl font-black text-orange-600 mt-2">{{ $totalProduk }} Item</h3>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-green-100">
                     <p class="text-sm text-gray-500 font-medium">Pesanan Masuk (WA)</p>
