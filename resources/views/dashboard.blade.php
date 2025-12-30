@@ -14,7 +14,7 @@
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-green-100">
                     <p class="text-sm text-gray-500 font-medium">Pesanan Masuk (WA)</p>
-                    <h3 class="text-3xl font-bold text-green-600">5 Hari Ini</h3>
+                    <h3 class="text-3xl font-bold text-green-600">3 Hari Ini</h3>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-blue-100">
                     <p class="text-sm text-gray-500 font-medium">Status Website</p>

@@ -62,7 +62,54 @@
             </div>
         </div>
     </section>
+<section id="tentang" class="py-32 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-20">
+            
+            <div class="md:w-1/2 relative">
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-orange-100 rounded-full -z-10"></div>
+                
+                <div class="relative rounded-[50px] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1588597989061-b60ad0eefdbf?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXlhbXxlbnwwfHwwfHx8MA%3D%3D" 
+                         alt="Ayam Sehat Berkualitas" 
+                         class="w-full h-[550px] object-cover hover:scale-105 transition-transform duration-700">
+                    
+                    <div class="absolute bottom-10 right-0 bg-white p-8 rounded-l-[40px] shadow-2xl border-l-8 border-orange-500">
+                        <p class="text-4xl font-black text-slate-800 tracking-tighter">100%</p>
+                        <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.2em]">Kualitas Terjamin</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="md:w-1/2 space-y-8">
+                <div class="inline-block">
+                    <p class="text-orange-600 font-black text-sm uppercase tracking-[0.4em] mb-2">Our Story</p>
+                    <div class="h-1.5 w-12 bg-orange-600 rounded-full"></div>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+                    {{ $settings['about_title'] ?? 'Lebih dari Sekadar Peternakan Biasa.' }}
+                </h2>
+                
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    {{ $settings['about_description'] ?? 'Berawal dari visi untuk menyediakan protein berkualitas bagi keluarga Indonesia, AyamKu hadir dengan sistem peternakan modern yang mengutamakan kesejahteraan hewan dan kebersihan proses sejak bibit hingga siap panen.' }}
+                </p>
+
+                <div class="grid grid-cols-2 gap-8 pt-6">
+                    <div class="border-l-4 border-orange-100 pl-6">
+                        <h4 class="font-bold text-slate-800 text-xl italic uppercase tracking-tighter">Visi Kami</h4>
+                        <p class="text-slate-500 text-sm mt-2 leading-relaxed">Menjadi penyuplai ayam segar nomor satu yang mengutamakan kualitas tanpa kompromi.</p>
+                    </div>
+                    <div class="border-l-4 border-orange-100 pl-6">
+                        <h4 class="font-bold text-slate-800 text-xl italic uppercase tracking-tighter">Misi Kami</h4>
+                        <p class="text-slate-500 text-sm mt-2 leading-relaxed">Memberdayakan peternak lokal dan memastikan produk sampai ke tangan konsumen dalam kondisi puncak.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
     <section id="produk" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -86,7 +133,7 @@
                     <div class="p-8">
                         <h3 class="text-2xl font-bold text-slate-800">{{ $item->name }}</h3>
                         <p class="text-slate-400 text-sm mt-1 uppercase font-bold tracking-widest">Stok Ready: {{ $item->stock }}</p>
-                        <a href="https://wa.me/62812345678?text=Halo, saya tertarik memesan {{ $item->name }}" 
+                        <a href="https://wa.me/6281291502925?text=Halo,saya ingin pesan {{ $item->name }}. Saya melihat stok yang tersedia ada {{ $item->stock }} ekor." 
                            class="mt-8 flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-[20px] font-bold hover:bg-orange-600 transition-all shadow-lg shadow-slate-100">
                            Pesan Sekarang
                         </a>
@@ -114,7 +161,7 @@
             <div>
                 <h4 class="text-white font-bold mb-6 italic uppercase tracking-widest text-sm">Hubungi Kami</h4>
                 <p class="text-sm leading-relaxed mb-4">Jl. Peternakan Berkualitas No. 88, Jakarta Timur</p>
-                <p class="text-sm font-bold text-white tracking-widest">0812-3456-7890</p>
+                <p class="text-sm font-bold text-white tracking-widest">0812-9150-2925</p>
             </div>
         </div>
         <div class="max-w-7xl mx-auto border-t border-slate-800 mt-20 pt-8 text-center text-xs tracking-widest uppercase">
