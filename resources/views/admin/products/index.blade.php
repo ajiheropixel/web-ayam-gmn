@@ -18,12 +18,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     @foreach ($products as $product)
                     <div class="border border-slate-100 rounded-3xl p-5 hover:shadow-lg transition duration-300">
-                        <div class="w-full h-40 bg-slate-100 rounded-2xl mb-4 flex items-center justify-center text-4xl">
-                            🍗
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-800">{{ $product->name }}</h4>
-                        <p class="text-orange-600 font-extrabold text-lg">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                        <p class="text-slate-500 text-sm mb-4">Stok: {{ $product->stock }} ekor</p>
+                        <div class="w-full h-40 bg-slate-100 rounded-2xl mb-4 overflow-hidden flex items-center justify-center">
+    @if($product->image)
+        <img src="{{ asset('images/' . $product->image) }}" class="w-full h-full object-cover">
+    @else
+        <span class="text-4xl">🍗</span>
+    @endif
+</div>
+                       <h3 class="font-bold text-slate-800 text-lg leading-tight mb-1">{{ $product->name }}</h3>
+                <p class="text-orange-600 font-black text-xl mb-2">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">Stok: {{ $product->stock }} Ekor</p>
                         
                         <div class="flex gap-2">
                             <a href="{{ route('products.edit', $product->id) }}" class="text-blue-500 font-bold text-sm">Edit</a>
