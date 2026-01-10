@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // Ambil semua data setting dan jadikan array agar terbaca oleh $settings di welcome.blade.php
+    $settings = \App\Models\Setting::pluck('value', 'key');
+    return view('welcome', compact('settings'));
 });
 
 Route::get('/dashboard', function () {
