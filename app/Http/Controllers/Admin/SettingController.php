@@ -32,7 +32,7 @@ class SettingController extends Controller
         // Simpan semua teks ke database
         foreach ($data as $key => $value) {
             if ($value !== null) {
-                \App\Models\Setting::updateOrCreate(
+                Setting::updateOrCreate(
                     ['key' => $key],
                     ['value' => $value]
                 );

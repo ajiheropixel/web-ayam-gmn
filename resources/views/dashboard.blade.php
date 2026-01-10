@@ -54,6 +54,10 @@
                         class="bg-slate-800 text-white px-8 py-4 rounded-2xl font-black hover:bg-slate-700 transition-all">
                         ⚙️ Edit Tampilan Web
                     </a>
+                    <a href="{{ url('/') }}" target="_blank"
+                        class="bg-emerald-500 text-white px-8 py-4 rounded-2xl font-black hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-100 flex items-center gap-2">
+                        <span>🌐</span> Lihat Halaman Depan
+                    </a>
                 </div>
             </div>
 
